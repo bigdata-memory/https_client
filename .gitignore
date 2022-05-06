@@ -32,3 +32,7 @@
 *.dSYM/
 
 https_client
+
+build/
+
+*.log

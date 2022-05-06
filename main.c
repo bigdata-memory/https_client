@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     printf("return code: %d \n", ret);
     printf("return body: %s \n", response);
 */
-
+/*
     url = "https://localhost:8080/upload";
 
     if(http_open(&hi1, url) < 0)
@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
 
     printf("return code: %d \n", ret);
     printf("return body: %s \n", response);
-
+*/
 
 /*
     // Test a http get method.
@@ -177,6 +177,24 @@ int main(int argc, char *argv[])
 
     error:
 */
+
+    url = "https://httpbin.org/get?message=https_client";
+
+    ret = http_get(&hi2, url, response, sizeof(response));
+
+    printf("return code: %d \n", ret);
+    printf("return body: %s \n", response);
+
+    // Test a https post method.
+
+    url = "https://httpbin.org/post";
+    sprintf(data, "{\"message\":\"Hello, https_client!\"}");
+
+    ret = http_post(&hi2, url, data, response, sizeof(response));
+
+    printf("return code: %d \n", ret);
+    printf("return body: %s \n", response);
+
 
 error:
 
